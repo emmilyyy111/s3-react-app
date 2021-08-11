@@ -5,14 +5,14 @@ export default function Signup() {
   const [allUsers, setAllUsers] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/users')
+    fetch('http://localhost:5000/users')
       .then(rawData => rawData.json())
       .then(allUsers => setAllUsers(allUsers))
       .catch(err => console.log(err))
   }, [])
 
   const handleUserPost = () => {
-    fetch('http://localhost:3000/users', {
+    fetch('http://localhost:5000/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -43,14 +43,12 @@ export default function Signup() {
       {allUsers &&
         allUsers.map(eachUser => {
           return (
-            <>
             <div key={eachUser._id}>
               <span> {eachUser.fname}</span>
               <span> {eachUser.lname}</span>
               <span> {eachUser.email}</span>
               <hr />
               </div>
-            </>
           )
         })}
     </>

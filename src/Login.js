@@ -10,7 +10,7 @@ export default function Login () {
     }
 
     const handleUserLogin = () => {
-        fetch('http://localhost:3000/login', {
+        fetch('http://localhost:5000/login', {
             method: 'POST',
             headers: {'Content-type': 'application/json',
         },
